@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "getstartedjava-3220"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "getstartedjava-3220"
+  template:
+    metadata:
+      labels:
+        app: "getstartedjava-3220"
+    spec:
+      containers:
+        - name: "getstartedjava-3220"
+          image: "getstartedjavaregistry.azurecr.io/getstartedjava"
+          ports:
+          - containerPort: 9080
